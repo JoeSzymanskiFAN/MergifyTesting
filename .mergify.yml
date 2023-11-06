@@ -1,0 +1,10 @@
+pull_request_rules:
+  - name: backport patches to the main branch and assign to original author
+    conditions:
+      - label=test
+    actions:
+      backport:
+        branches:
+          - "main"
+        assignees:
+          - "{{ author }}"
